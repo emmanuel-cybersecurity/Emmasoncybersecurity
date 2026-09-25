@@ -1,2170 +1,361 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Emmason Cyber Security |Smart Protection for a Connected World .</title>
-
-  <meta name="description"
-        content="Emmason Cyber Security provides cybersecurity consulting, network security, vulnerability assessment, threat detection, incident response and cybersecurity training.">
-
-  <meta name="theme-color" content="#06111f">
-
-  <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300d4ff'/%3E%3Ctext x='50' y='65' font-size='55' text-anchor='middle' fill='%2306111f' font-family='Arial' font-weight='bold'%3EE%3C/text%3E%3C/svg%3E">
-
-  <style>
-
-    /* =====================================================
-       GLOBAL
-    ===================================================== */
-
-    :root {
-      --bg: #06111f;
-      --bg2: #091827;
-      --card: #0b1b2d;
-      --card2: #102338;
-
-      --cyan: #00d4ff;
-      --blue: #1677ff;
-      --green: #00e5a8;
-
-      --white: #ffffff;
-      --text: #e8f1f8;
-      --muted: #91a4b7;
-
-      --border: rgba(255,255,255,0.08);
-
-      --max-width: 1180px;
-      --radius: 18px;
-
-      --font:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font);
-      background:
-        radial-gradient(circle at 80% 10%, rgba(0,212,255,.10), transparent 30%),
-        radial-gradient(circle at 10% 50%, rgba(22,119,255,.08), transparent 30%),
-        var(--bg);
-
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: auto;
-    }
-
-
-    /* =====================================================
-       NAVBAR
-    ===================================================== */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: rgba(6,17,31,.85);
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-      height: 78px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .brand-name {
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: -.3px;
-    }
-
-    .brand-tagline {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    nav a {
-      padding: 10px 14px;
-      border-radius: 10px;
-
-      color: #b8c7d6;
-      font-size: 14px;
-      font-weight: 600;
-
-      transition: .25s ease;
-    }
-
-    nav a:hover {
-      color: white;
-      background: rgba(255,255,255,.05);
-    }
-
-    .nav-button {
-      background: var(--cyan);
-      color: #02121e !important;
-      font-weight: 800;
-      margin-left: 8px;
-    }
-
-    .nav-button:hover {
-      background: white;
-      transform: translateY(-2px);
-    }
-
-    .menu-button {
-      display: none;
-
-      border: 1px solid var(--border);
-      background: transparent;
-      color: white;
-
-      padding: 9px 12px;
-      border-radius: 9px;
-
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      min-height: 680px;
-
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-
-      align-items: center;
-      gap: 60px;
-
-      padding: 90px 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      padding: 7px 12px;
-
-      border: 1px solid rgba(0,212,255,.25);
-      background: rgba(0,212,255,.06);
-
-      border-radius: 999px;
-
-      color: var(--cyan);
-
-      font-size: 12px;
-      font-weight: 800;
-
-      letter-spacing: .7px;
-      text-transform: uppercase;
-
-      margin-bottom: 22px;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-
-      background: var(--green);
-      border-radius: 50%;
-
-      box-shadow: 0 0 12px var(--green);
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 6vw, 78px);
-
-      line-height: .98;
-      letter-spacing: -4px;
-
-      max-width: 720px;
-
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--cyan);
-    }
-
-    .hero-text {
-      max-width: 650px;
-
-      color: var(--muted);
-
-      font-size: 18px;
-      line-height: 1.8;
-
-      margin-bottom: 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 14px 22px;
-
-      border-radius: 11px;
-
-      font-size: 14px;
-      font-weight: 800;
-
-      transition: .25s ease;
-    }
-
-    .button-primary {
-      background: var(--cyan);
-      color: #02121e;
-
-      box-shadow: 0 10px 35px rgba(0,212,255,.15);
-    }
-
-    .button-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0,212,255,.25);
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      color: white;
-    }
-
-    .button-secondary:hover {
-      background: rgba(255,255,255,.07);
-    }
-
-
-    /* =====================================================
-       SOC VISUAL
-    ===================================================== */
-
-    .soc-wrapper {
-      position: relative;
-    }
-
-    .soc-card {
-      position: relative;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(13,39,63,.95),
-          rgba(5,18,31,.98)
-        );
-
-      border: 1px solid rgba(0,212,255,.15);
-
-      border-radius: 24px;
-
-      padding: 20px;
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.4),
-        0 0 80px rgba(0,212,255,.06);
-
-      overflow: hidden;
-    }
-
-    .soc-card::before {
-      content: "";
-
-      position: absolute;
-      width: 260px;
-      height: 260px;
-
-      background: rgba(0,212,255,.08);
-
-      filter: blur(60px);
-
-      top: -120px;
-      right: -80px;
-
-      border-radius: 50%;
-    }
-
-    .soc-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .soc-title {
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .live {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-
-      color: var(--green);
-
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .dashboard {
-      padding: 24px 0;
-    }
-
-    .threat-ring {
-      width: 180px;
-      height: 180px;
-
-      margin: 15px auto 25px;
-
-      border-radius: 50%;
-
-      border:
-        8px solid rgba(0,212,255,.08);
-
-      border-top-color: var(--cyan);
-      border-right-color: var(--blue);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-    }
-
-    .threat-ring::after {
-      content: "";
-
-      position: absolute;
-
-      width: 130px;
-      height: 130px;
-
-      border-radius: 50%;
-
-      border: 1px dashed rgba(0,212,255,.3);
-    }
-
-    .shield {
-      font-size: 52px;
-      z-index: 2;
-    }
-
-    .security-level {
-      text-align: center;
-    }
-
-    .security-level strong {
-      display: block;
-      font-size: 25px;
-    }
-
-    .security-level span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .soc-stats {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 10px;
-    }
-
-    .soc-stat {
-      padding: 14px;
-
-      border-radius: 12px;
-
-      background: rgba(255,255,255,.035);
-
-      border: 1px solid var(--border);
-    }
-
-    .soc-stat strong {
-      display: block;
-      font-size: 19px;
-    }
-
-    .soc-stat span {
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-
-    /* =====================================================
-       SECTION
-    ===================================================== */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      max-width: 720px;
-      margin-bottom: 45px;
-    }
-
-    .section-label {
-      color: var(--cyan);
-
-      font-size: 12px;
-      font-weight: 900;
-
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(34px, 4vw, 52px);
-
-      line-height: 1.05;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 15px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-
-    /* =====================================================
-       SERVICES
-    ===================================================== */
-
-    .services {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 18px;
-    }
-
-    .service-card {
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.045),
-          rgba(255,255,255,.015)
-        );
-
-      border: 1px solid var(--border);
-
-      padding: 28px;
-
-      border-radius: var(--radius);
-
-      transition: .3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-
-      border-color:
-        rgba(0,212,255,.25);
-
-      box-shadow:
-        0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 12px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(0,212,255,.18),
-          rgba(22,119,255,.12)
-        );
-
-      border:
-        1px solid rgba(0,212,255,.15);
-
-      font-size: 22px;
-
-      margin-bottom: 22px;
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-
-    /* =====================================================
-       STATS
-    ===================================================== */
-
-    .stats-section {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,212,255,.04),
-          rgba(22,119,255,.04)
-        );
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 20px;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 25px;
-    }
-
-    .stat strong {
-      display: block;
-
-      font-size: 40px;
-
-      color: var(--cyan);
-
-      letter-spacing: -2px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-
-    /* =====================================================
-       ABOUT
-    ===================================================== */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-box {
-      padding: 32px;
-
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: 20px;
-    }
-
-    .about-box p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .mission {
-      margin-top: 25px;
-
-      padding: 20px;
-
-      border-left: 3px solid var(--cyan);
-
-      background: rgba(0,212,255,.04);
-    }
-
-    .mission strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-
-    /* =====================================================
-       WHY US
-    ===================================================== */
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 18px;
-    }
-
-    .why-item {
-      display: flex;
-      gap: 16px;
-
-      padding: 22px;
-
-      background: rgba(255,255,255,.025);
-
-      border: 1px solid var(--border);
-
-      border-radius: 15px;
-    }
-
-    .check {
-      width: 32px;
-      height: 32px;
-
-      flex-shrink: 0;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: rgba(0,229,168,.1);
-
-      color: var(--green);
-    }
-
-    .why-item h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .why-item p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-
-    /* =====================================================
-       CONTACT
-    ===================================================== */
-
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 35px;
-    }
-
-    .contact-info {
-      padding: 35px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #0c2137,
-          #081523
-        );
-
-      border-radius: 20px;
-
-      border: 1px solid var(--border);
-    }
-
-    .contact-info h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .contact-detail {
-      padding: 15px 0;
-
-      border-bottom: 1px solid var(--border);
-
-      color: #c8d5e0;
-
-      font-size: 14px;
-    }
-
-    form {
-      padding: 35px;
-
-      background: var(--card);
-
-      border-radius: 20px;
-
-      border: 1px solid var(--border);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    label {
-      display: block;
-
-      margin-bottom: 7px;
-
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-
-      border: 1px solid var(--border);
-
-      background: #071422;
-
-      color: white;
-
-      padding: 13px 14px;
-
-      border-radius: 10px;
-
-      font-family: inherit;
-
-      margin-bottom: 17px;
-    }
-
-    input:focus,
-    textarea:focus {
-      outline: none;
-
-      border-color: var(--cyan);
-
-      box-shadow:
-        0 0 0 3px rgba(0,212,255,.08);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    footer {
-      border-top: 1px solid var(--border);
-
-      background: #040c15;
-
-      padding: 55px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-      gap: 40px;
-
-      padding-bottom: 40px;
-    }
-
-    .footer-brand p {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      max-width: 350px;
-
-      margin-top: 15px;
-    }
-
-    footer h4 {
-      margin-bottom: 15px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-
-      gap: 9px;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      font-size: 13px;
-      transition: .2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--cyan);
-    }
-
-    /* SOCIAL MEDIA */
-
-    .socials {
-      display: flex;
-      gap: 9px;
-
-      margin-top: 18px;
-    }
-
-    .social {
-      width: 40px;
-      height: 40px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 10px;
-
-      background: rgba(255,255,255,.05);
-
-      border: 1px solid var(--border);
-
-      color: #b8c7d4;
-
-      font-size: 13px;
-      font-weight: 800;
-
-      transition: .25s;
-    }
-
-    .social:hover {
-      background: var(--cyan);
-      color: #02121e;
-
-      transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      padding-top: 22px;
-
-      border-top: 1px solid var(--border);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      color: #718497;
-
-      font-size: 12px;
-    }
-
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
-    @media(max-width: 900px) {
-
-      .hero,
-      .about-grid,
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .services {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      nav {
-        display: none;
-
-        position: absolute;
-
-        top: 78px;
-        left: 0;
-        right: 0;
-
-        padding: 15px;
-
-        background: #071321;
-
-        flex-direction: column;
-
-        border-bottom: 1px solid var(--border);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav a {
-        width: 100%;
-        text-align: center;
-      }
-
-      .menu-button {
-        display: block;
-      }
-    }
-
-
-    @media(max-width: 600px) {
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .services,
-      .why-grid,
-      .stats,
-      .footer-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .soc-stats {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmason Cyber Security | Smart Protection for a Connected World</title>
+<meta name="description" content="Emmason Cyber Security provides cybersecurity, network security, risk management, security assessment and incident response services.">
+
+<style>
+:root{
+  --bg:#041c2b;
+  --bg2:#06283b;
+  --card:#0b3045;
+  --card2:#0d3952;
+  --text:#f4f8fb;
+  --muted:#a9bdc9;
+  --cyan:#11c9f5;
+  --blue:#2878ff;
+  --green:#16e0a0;
+  --border:rgba(255,255,255,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),#031622 80%);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(4,28,43,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  box-shadow:0 0 25px rgba(17,201,245,.20);
+  flex:none;
+}
+.logo img{width:100%;height:100%;object-fit:contain;background:#fff}
+.logo-fallback{font-weight:900;color:#fff;font-size:17px}
+.brand-name{font-weight:900;letter-spacing:.4px}
+.brand-tag{font-size:11px;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:10px;
+  color:#dbe9ef;
+  font-weight:700;
+  font-size:14px;
+}
+.nav-links a:hover{background:rgba(255,255,255,.07);color:var(--cyan)}
+.nav-links .nav-cta{background:var(--cyan);color:#02202e}
+.menu-toggle{
+  display:none;
+  background:none;border:1px solid var(--border);
+  color:#fff;border-radius:10px;padding:9px 12px;font-size:22px;
+}
+section{padding:82px 0}
+.hero{
+  min-height:calc(100vh - 76px);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:50px;
+  align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border:1px solid rgba(17,201,245,.28);
+  border-radius:999px;color:var(--cyan);
+  background:rgba(17,201,245,.06);
+  font-size:12px;font-weight:800;letter-spacing:.6px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:22px 0 18px;letter-spacing:-2px}
+.highlight{color:var(--cyan)}
+.lead{font-size:18px;color:var(--muted);max-width:680px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-block;text-decoration:none;
+  padding:14px 20px;border-radius:12px;
+  font-weight:800;border:1px solid var(--border);
+}
+.btn-primary{background:var(--cyan);color:#02202e}
+.btn-secondary{background:rgba(255,255,255,.04);color:#fff}
+.hero-card{
+  background:linear-gradient(180deg,#0b3045,#061f30);
+  border:1px solid rgba(17,201,245,.20);
+  border-radius:24px;padding:25px;
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+.status{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:18px;font-weight:800}
+.active{color:var(--green);font-size:12px}
+.shield{
+  width:190px;height:190px;margin:45px auto 25px;
+  border-radius:50%;
+  border:12px solid rgba(17,201,245,.14);
+  border-top-color:var(--cyan);
+  border-right-color:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:70px;
+  background:radial-gradient(circle,rgba(17,201,245,.10),transparent 65%);
+}
+.protected{text-align:center;font-size:26px;font-weight:900}
+.center-muted{text-align:center;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.stat{padding:16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--border)}
+.stat strong{display:block;font-size:18px}
+.stat span{font-size:12px;color:var(--muted)}
+.section-title{font-size:38px;margin:0 0 10px}
+.section-lead{color:var(--muted);max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.card{
+  padding:24px;border:1px solid var(--border);
+  background:linear-gradient(180deg,var(--card),rgba(11,48,69,.65));
+  border-radius:var(--radius);
+}
+.card-icon{font-size:30px;margin-bottom:12px}
+.card h3{margin:0 0 8px}
+.card p{margin:0;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.panel{padding:28px;border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:20px}
+.check{display:flex;gap:10px;margin:12px 0;color:#dcecf2}
+.check b{color:var(--green)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px}
+.contact-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.contact-item:last-child{border-bottom:0}
+.contact-item small{display:block;color:var(--muted)}
+.contact-item a{color:var(--cyan);text-decoration:none}
+form{display:grid;gap:14px}
+input,textarea{
+  width:100%;padding:14px;border-radius:12px;
+  border:1px solid var(--border);
+  background:#061e2d;color:#fff;font:inherit;
+}
+textarea{min-height:140px;resize:vertical}
+button.submit{
+  border:0;cursor:pointer;padding:14px;border-radius:12px;
+  background:var(--cyan);color:#02202e;font-weight:900;font-size:15px;
+}
+footer{padding:30px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+@media(max-width:800px){
+  .menu-toggle{display:block}
+  .nav-links{
+    display:none;position:absolute;top:76px;left:4%;right:4%;
+    flex-direction:column;align-items:stretch;
+    background:#06283b;border:1px solid var(--border);
+    border-radius:16px;padding:10px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  }
+  .nav-links.show{display:flex}
+  .nav-links a{text-align:center;padding:13px}
+  .hero,.about,.contact-grid{grid-template-columns:1fr}
+  .hero{padding-top:55px}
+  .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  section{padding:65px 0}
+}
+</style>
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
-
-  <div class="container navbar">
-
-    <a href="#home" class="brand">
-
-      <!-- Replace with your real logo -->
-      <img src="2026 LOGO.png"
-           alt="Emmason Cyber Security Logo">
-
-      <div>
-        <div class="brand-name">
-          EMMASON CYBER SECURITY
-        </div>
-
-        <div class="brand-tagline">
-          Smart Protection for a Connected World
-        </div>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <div class="logo">
+        <img src="2026 LOGO.png" alt="Emmason Cyber Security logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <span class="logo-fallback" style="display:none">EC</span>
       </div>
-
+      <div>
+        <div class="brand-name">EMMASON CYBER SECURITY</div>
+        <div class="brand-tag">Smart Protection for a Connected World</div>
+      </div>
     </a>
 
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-    <nav id="navigation">
-
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About Us</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#contact">Contact</a>
-
-      <a href="#contact"
-         class="nav-button">
-        Get Started
-      </a>
-
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Services.html">Services</a>
+      <a href="Why-Us.html">Why Us</a>
+     
+      <a href="Contact.html" class="nav-cta">Contact Us</a>
     </nav>
-
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open navigation">
-
-      ☰
-
-    </button>
-
   </div>
-
 </header>
 
-
-
-<main id="home">
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section>
-
+<main>
+<section id="home">
   <div class="container hero">
-
-
     <div>
-
-      <div class="eyebrow">
-
-        <span class="status-dot"></span>
-
-        Cybersecurity • Network Security • Risk Management
-
+      <div class="badge"><span class="dot"></span> CYBERSECURITY · NETWORK SECURITY · RISK MANAGEMENT</div>
+      <h1>Defend. <span class="highlight">Secure.</span> Simplify.</h1>
+      <p class="lead">We help businesses, organizations and individuals protect their digital environments, reduce cyber risk and build stronger security foundations.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="Get a Security Assessment.html">Get a Security Assessment →</a>
+        <a class="btn btn-secondary" href="explore-services.html">Explore Services</a>
       </div>
-
-
-      <h1>
-
-        Defend.
-        <span>Secure.</span>
-        Simplify.
-
-      </h1>
-
-
-      <p class="hero-text">
-
-        We help businesses, organizations and individuals
-        protect their digital environments, reduce cyber risk
-        and build stronger security foundations.
-
-      </p>
-
-
-      <div class="hero-buttons">
-
-        <a href="#contact"
-           class="button button-primary">
-
-          Get a Security Assessment →
-
-        </a>
-
-
-        <a href="#services"
-           class="button button-secondary">
-
-          Explore Services
-
-        </a>
-
-      </div>
-
     </div>
 
-
-
-    <!-- SOC DASHBOARD -->
-
-    <div class="soc-wrapper">
-
-      <div class="soc-card">
-
-
-        <div class="soc-top">
-
-          <div class="soc-title">
-            EMMASON SECURITY OPERATIONS
-          </div>
-
-          <div class="live">
-
-            <span class="status-dot"></span>
-
-            SECURITY ACTIVE
-
-          </div>
-
-        </div>
-
-
-        <div class="dashboard">
-
-
-          <div class="threat-ring">
-
-            <div class="shield">
-              🛡️
-            </div>
-
-          </div>
-
-
-          <div class="security-level">
-
-            <strong>
-              Protected
-            </strong>
-
-            <span>
-              Continuous security monitoring
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="soc-stats">
-
-          <div class="soc-stat">
-
-            <strong>
-              24/7
-            </strong>
-
-            <span>
-              Security Mindset
-            </span>
-
-          </div>
-
-
-          <div class="soc-stat">
-
-            <strong>
-              AI
-            </strong>
-
-            <span>
-              Threat Analysis
-            </span>
-
-          </div>
-
-
-          <div class="soc-stat">
-
-            <strong>
-              NG
-            </strong>
-
-            <span>
-              Based in Nigeria
-            </span>
-
-          </div>
-
-        </div>
-
+    <div class="hero-card">
+      <div class="status">
+        <span>EMMASON CYBER SECURITY  OPERATIONS</span>
+        <span class="active">● SECURITY ACTIVE</span>
       </div>
-
+      <div class="shield">🛡️</div>
+      <div class="protected">Protected</div>
+      <div class="center-muted">Continuous security monitoring</div>
+      <div class="stats">
+        <div class="stat"><strong>24/7</strong><span>Security Mindset</span></div>
+        <div class="stat"><strong>AI</strong><span>Threat Analysis</span></div>
+        <div class="stat"><strong>NG</strong><span>Based in Nigeria</span></div>
+      </div>
     </div>
-
   </div>
-
 </section>
-
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section id="services">
-
-  <div class="container">
-
-
-    <div class="section-header">
-
-      <div class="section-label">
-        Our Expertise
-      </div>
-
-      <h2 class="section-title">
-        Security built around your real-world risks.
-      </h2>
-
-      <p class="section-description">
-
-        At Emmason Cyber Security, we combines
-        cybersecurity knowledge, modern technology, 
-        and proactive security practices to help 
-        individuals businesses and organization
-        protect their digital environments.
-        Our expertis is focused on identifying
-        vulnerabilities, reducing cyber risks,
-        strengthening security defenses, and 
-        helping our clients respond confidentily
-        to today's evolving threat landscape.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="services">
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          🛡️
-        </div>
-
-        <h3>
-          Cybersecurity Consulting
-        </h3>
-
-        <p>
-          We assess your security posture and help
-          develop practical strategies to protect
-          your organization from cyber threats.
-        </p>
-
-      </div>
-
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          🔍
-        </div>
-
-        <h3>
-          Vulnerability Assessment
-        </h3>
-
-        <p>
-          Identify weaknesses in networks, systems
-          and applications before attackers discover them.
-        </p>
-
-      </div>
-
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          ⚔️
-        </div>
-
-        <h3>
-          Penetration Testing
-        </h3>
-
-        <p>
-          Authorized security testing designed to
-          discover exploitable vulnerabilities and
-          improve your defenses.
-        </p>
-
-      </div>
-
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          🌐
-        </div>
-
-        <h3>
-          Network & System Security
-        </h3>
-
-        <p>
-          Protect networks, servers and connected
-          systems through secure configurations,
-          monitoring and hardening.
-        </p>
-
-      </div>
-
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          🚨
-        </div>
-
-        <h3>
-          Threat Detection & Response
-        </h3>
-
-        <p>
-          Detect suspicious activity, investigate
-          security incidents and support rapid response.
-        </p>
-
-      </div>
-
-
-
-      <div class="service-card">
-
-        <div class="service-icon">
-          🎓
-        </div>
-
-        <h3>
-          Cybersecurity Training
-        </h3>
-
-        <p>
-          Practical cybersecurity training for
-          individuals, students, businesses and teams.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<section class="stats-section">
-
-  <div class="container stats">
-
-
-    <div class="stat">
-
-      <strong>
-        24/7
-      </strong>
-
-      <span>
-        Security Mindset
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        6+
-      </strong>
-
-      <span>
-        Security Services
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        100%
-      </strong>
-
-      <span>
-        Client Focus
-      </span>
-
-    </div>
-
-
-    <div class="stat">
-
-      <strong>
-        NG
-      </strong>
-
-      <span>
-        Nigeria Based
-      </span>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
 
 <section id="about">
-
-  <div class="container about-grid">
-
-
+  <div class="container about">
     <div>
-
-      <div class="section-label">
-        About Emmason
-      </div>
-
-      <h2 class="section-title">
-        Security is not just technology. It's trust.
-      </h2>
-
-      <p class="section-description">
-
-      We understand that behind every system,
-      network, device, and piece of information
-      is something valuable that deserves protection.
-      Our mission is to help individuals, businesses,
-      and organizations protect what matters while building
-      confidence in their digital OPERATIONS.
-      We believe true security begins with understanding.
-      risks, protecting people and information, and creating
-      reliable defenses against evolving cyber threats.
-      That is why we approach cybersecurity with integrity,
-      responsibility, transparency, and a commitment to
-      continuous improvement. We work to create security.
-      solutions that not only defend against threats but also 
-      give our clients the confidence to grow, innovate, and
-      operate safely in the digital World.
-      Protecting Your Digital World. Building Your Trust.
-      Emmason Cyber Security
-      🌎Smart Protection for a Connected World🌍
-
-
-      </p>
-
+      <div class="badge">ABOUT EMMASON</div>
+      <h2 class="section-title">Security is not just technology. It's trust.</h2>
+      <p class="section-lead">Emmason Cyber Security is focused on helping people and organizations understand cyber risks, protect important information and respond confidently to security challenges.</p>
+      <p class="section-lead">Our goal is simple: make strong cybersecurity more understandable, practical and accessible.</p>
     </div>
-
-
-    <div class="about-box">
-
-      <p>
-
-        We provide practical cybersecurity services
-        designed to help individuals, businesses and
-        organizations understand their risks and
-        strengthen their digital defenses.
-
-      </p>
-
-
-      <p>
-
-        Our approach combines cybersecurity knowledge,
-        continuous learning, ethical security practices
-        and practical solutions.
-
-      </p>
-
-
-      <div class="mission">
-
-        <strong>
-          Our Mission
-        </strong>
-
-        At Emmason Cyber-security, our mission 
-        is to make the digital World safer, smarter,and more 
-        secure for individuals from evolving cyber threats. 
-        
-        Through education, technology, proactive security and
-        and continuous innovation, we aim to empower our clients
-        with the knowledge and protection they need to confidently
-        navigate an increasingly connected World.
-        We believe cyber security should not only respond to threats-
-        it should anticipate them, prvent them, and  build lasting 
-        digital resilience. Our Motto 
-        "Smart Protection for a Connected World."
-        At Emmason Cyber Security, we protect what matters, strengthen
-        what connects us, and help build a more secure digital future.
-
-      </div>
-
+    <div class="panel">
+      <h3>Our Mission</h3>
+      <p class="section-lead">To provide smart, practical cybersecurity protection for a connected world.</p>
+      <div class="check"><b>✓</b> Identify security weaknesses</div>
+      <div class="check"><b>✓</b> Reduce cyber risk</div>
+      <div class="check"><b>✓</b> Strengthen security awareness</div>
+      <div class="check"><b>✓</b> Support safer digital environments</div>
     </div>
-
-
   </div>
-
 </section>
 
-
-
-<!-- =====================================================
-     WHY US
-===================================================== -->
+<section id="services">
+  <div class="container">
+    <div class="badge">OUR SERVICES</div>
+    <h2 class="section-title">Practical cybersecurity solutions</h2>
+    <p class="section-lead">Services designed to help identify, manage and reduce digital security risks.</p>
+    <div class="grid">
+      <div class="card"><div class="card-icon">🔎</div><h3>Security Assessment</h3><p>Review systems, networks and security practices to identify weaknesses and areas for improvement.</p></div>
+      <div class="card"><div class="card-icon">🛡️</div><h3>Threat & Risk Management</h3><p>Understand cyber threats and prioritize actions that can reduce business and operational risk.</p></div>
+      <div class="card"><div class="card-icon">🌐</div><h3>Network Security</h3><p>Support safer network environments through security-focused configuration and assessment.</p></div>
+      <div class="card"><div class="card-icon">🚨</div><h3>Incident Response</h3><p>Help organizations respond to cybersecurity incidents and limit potential damage.</p></div>
+      <div class="card"><div class="card-icon">📋</div><h3>Security Consulting</h3><p>Practical guidance for organizations building or improving their cybersecurity programs.</p></div>
+      <div class="card"><div class="card-icon">🎓</div><h3>Cybersecurity Awareness</h3><p>Help individuals and teams develop safer habits for protecting accounts, data and devices.</p></div>
+    </div>
+  </div>
+</section>
 
 <section id="why-us">
-
   <div class="container">
-
-
-    <div class="section-header">
-
-      <div class="section-label">
-        Why Emmason
-      </div>
-
-      <h2 class="section-title">
-        Simple security. Practical protection.
-      </h2>
-
-      <p class="section-description">
-
-       Security is built on trust. We are committed
-       to responsible practices, transparency, confidentiality
-       and professionalism in everything we do. Choosing 
-       Emmason Cyber Security means choosing a security-focused 
-       partner committed to helping you understand your resks,
-       strengthen your defenses,. and protect what matters most.
-     </p>
-
+    <div class="badge">WHY EMMASON</div>
+    <h2 class="section-title">Security with a practical mindset.</h2>
+    <div class="grid">
+      <div class="card"><div class="card-icon">⚡</div><h3>Clear & Practical</h3><p>We focus on understandable security recommendations that people can act on.</p></div>
+      <div class="card"><div class="card-icon">🔐</div><h3>Security First</h3><p>Confidentiality, integrity and availability remain central to our security approach.</p></div>
+      <div class="card"><div class="card-icon">🇳🇬</div><h3>Built in Nigeria</h3><p>We understand the needs of individuals and organizations operating in Nigeria's digital environment.</p></div>
     </div>
-
-
-
-    <div class="why-grid">
-
-
-      <div class="why-item">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div>
-
-          <h3>
-            Practical Security
-          </h3>
-
-          <p>
-            We focus on security solutions that
-            can actually be implemented.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="why-item">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div>
-
-          <h3>
-            Ethical Approach
-          </h3>
-
-          <p>
-            Security testing is performed only
-            with proper authorization.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="why-item">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div>
-
-          <h3>
-            Clear Reporting
-          </h3>
-
-          <p>
-            We explain vulnerabilities and
-            remediation steps in simple language.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="why-item">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div>
-
-          <h3>
-            Continuous Learning
-          </h3>
-
-          <p>
-            Cybersecurity evolves constantly.
-            Our approach evolves with it.
-          </p>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
   </div>
-
 </section>
 
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<section id="register">
+  <div class="container">
+    <div class="panel">
+      <div class="badge">REGISTER</div>
+      <h2 class="section-title">Request a cybersecurity consultation</h2>
+      <p class="section-lead">Tell us what you need help with and our team can follow up with you.</p>
+      <a class="btn btn-primary" href="register.html">Start Registration →</a>
+    </div>
+  </div>
+</section>
 
 <section id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="badge">CONTACT US</div>
+      <h2 class="section-title">Let's secure your digital environment.</h2>
+      <p class="section-lead">Contact Emmason Cyber Security for a security assessment, consultation or general inquiry.</p>
 
-  <div class="container contact-wrapper">
-
-
-    <div class="contact-info">
-
-      <div class="section-label">
-        Let's Talk Security
-      </div>
-
-      <h3>
-        Ready to strengthen your security?
-      </h3>
-
-      <p>
-
-        Tell us what you need help with and
-        we'll discuss the best next step.
-
-      </p>
-
-
-      <div class="contact-detail">
-
-        📧
-        info@emmasoncybersecurity.com
-
-      </div>
-
-
-      <div class="contact-detail">
-
-        📞
-        +234 706 863 8015
-
-      </div>
-
-
-      <div class="contact-detail">
-
-        📍
-        Nigeria
-
-      </div>
-
+      <div class="contact-item"><small>Email</small><a href="mailto:info@emmasoncybersecurity.com">info@emmasoncybersecurity.com</a></div>
+      <div class="contact-item"><small>Organization</small>Emmason Cyber Security</div>
+      <div class="contact-item"><small>Location</small>Nigeria</div>
     </div>
 
-
-
-    <form id="contactForm">
-
-      <div class="form-row">
-
-
-        <div>
-
-          <label>
-            Full Name
-          </label>
-
-          <input
-            type="text"
-            id="name"
-            placeholder="Your name"
-            required>
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Email
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            placeholder="name@example.com"
-            required>
-
-        </div>
-
-
-      </div>
-
-
-      <label>
-        Organization
-      </label>
-
-      <input
-        type="text"
-        id="organization"
-        placeholder="Company or organization">
-
-
-      <label>
-        How can we help?
-      </label>
-
-      <textarea
-        id="message"
-        placeholder="Tell us about your cybersecurity needs..."
-        required></textarea>
-
-
-      <button
-        type="submit"
-        class="button button-primary">
-
-        Send Security Request →
-
-      </button>
-
-    </form>
-
-
+    <div class="panel">
+      <form onsubmit="sendMessage(event)">
+        <input id="name" type="text" placeholder="Your name" required>
+        <input id="email" type="email" placeholder="Your email" required>
+        <textarea id="message" placeholder="How can we help you?" required></textarea>
+        <button class="submit" type="submit">Send Message →</button>
+      </form>
+    </div>
   </div>
-
 </section>
-
-
-
 </main>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
-
-  <div class="container">
-
-
-    <div class="footer-grid">
-
-
-      <!-- BRAND -->
-
-      <div class="footer-brand">
-
-        <a href="#home" class="brand">
-
-          <img
-            src="2026 LOGO.png"
-            alt="Emmason Cyber Security">
-
-          <div>
-
-            <div class="brand-name">
-              EMMASON CYBER SECURITY
-            </div>
-
-            <div class="brand-tagline">
-              Smart Protection for a Connected World
-            </div>
-
-          </div>
-
-        </a>
-
-
-        <p>
-
-          Protecting digital systems, networks
-          and information through practical
-          cybersecurity solutions.
-
-        </p>
-
-
-        <!-- SOCIAL MEDIA -->
-
-        <div class="socials">
-
-          <!-- Replace # with your real links -->
-
-          <a
-            class="social"
-            href="#"
-            aria-label="Facebook"
-            target="_blank">
-            f
-          </a>
-
-
-          <a
-            class="social"
-            href="#"
-            aria-label="Instagram"
-            target="_blank">
-            ◎
-          </a>
-
-
-          <a
-            class="social"
-            href="#"
-            aria-label="LinkedIn"
-            target="_blank">
-            in
-          </a>
-
-
-          <a
-            class="social"
-            href="#"
-            aria-label="X"
-            target="_blank">
-            X
-          </a>
-
-
-          <a
-            class="social"
-            href="#"
-            aria-label="YouTube"
-            target="_blank">
-            ▶
-          </a>
-
-
-          <a
-            class="social"
-            href="#"
-            aria-label="WhatsApp"
-            target="_blank">
-            ☎
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- COMPANY -->
-
-      <div>
-
-        <h4>
-          Company
-        </h4>
-
-        <div class="footer-links">
-
-          <a href="#about">
-            About Us
-          </a>
-
-          <a href="#why-us">
-            Why Emmason
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- SERVICES -->
-
-      <div>
-
-        <h4>
-          Services
-        </h4>
-
-        <div class="footer-links">
-
-          <a href="#services">
-            Cybersecurity Consulting
-          </a>
-
-          <a href="#services">
-            Vulnerability Assessment
-          </a>
-
-          <a href="#services">
-            Network Security
-          </a>
-
-          <a href="#services">
-            Cybersecurity Training
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- SECURITY -->
-
-      <div>
-
-        <h4>
-          Security
-        </h4>
-
-        <div class="footer-links">
-
-          <a href="#services">
-            Penetration Testing
-          </a>
-
-          <a href="#services">
-            Incident Response
-          </a>
-
-          <a href="#services">
-            Threat Detection
-          </a>
-
-          <a href="#contact">
-            Request Assessment
-          </a>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-
-    <div class="footer-bottom">
-
-      <div>
-
-        © <span id="year"></span>
-        Emmason Cyber Security.
-        All rights reserved.
-
-      </div>
-
-
-      <div>
-
-        Smart Protection for a Connected World.
-
-      </div>
-
-    </div>
-
-
-  </div>
-
+  
+  <div class="container">© 2026 Emmason Cyber Security. Smart Protection for a Connected World.</div>
 </footer>
 
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
 
-  /* YEAR */
+menuToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('show');
+  menuToggle.setAttribute('aria-expanded', open);
+});
 
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-
-  /* MOBILE NAVIGATION */
-
-  const menuButton =
-    document.getElementById("menuButton");
-
-  const navigation =
-    document.getElementById("navigation");
-
-
-  menuButton.addEventListener("click", function () {
-
-    navigation.classList.toggle("active");
-
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    menuToggle.setAttribute('aria-expanded', 'false');
   });
+});
 
+function sendMessage(event){
+  event.preventDefault();
+  const name = encodeURIComponent(document.getElementById('name').value);
+  const email = encodeURIComponent(document.getElementById('email').value);
+  const message = encodeURIComponent(document.getElementById('message').value);
+  const subject = encodeURIComponent('Emmason Cyber Security Website Inquiry');
+  const body = encodeURIComponent(
+    'Name: ' + decodeURIComponent(name) +
+    '\nEmail: ' + decodeURIComponent(email) +
+    '\n\nMessage:\n' + decodeURIComponent(message)
+  );
+  window.location.href = 'mailto:info@emmasoncybersecurity.com?subject=' + subject + '&body=' + body;
+}
 
-  /* CLOSE MOBILE MENU */
-
-  document.querySelectorAll("#navigation a")
-    .forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        navigation.classList.remove("active");
-
-      });
-
-    });
-
-
-
-  /* CONTACT FORM */
-
-  const form =
-    document.getElementById("contactForm");
-
-
-  form.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const email =
-      document.getElementById("email").value.trim();
-
-    const message =
-      document.getElementById("message").value.trim();
-
-
-    if (!name || !email || !message) {
-
-      alert(
-        "Please complete your name, email and message."
-      );
-
-      return;
-
-    }
-
-
-    alert(
-      "Thank you, " +
-      name +
-      ". Your security request has been received."
-    );
-
-
-    form.reset();
-
-  });
 
 </script>
-
-
 </body>
 </html>
-```
+
