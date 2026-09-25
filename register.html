@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register / Sign In | Emmason Cyber Security</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:Arial,sans-serif;background:linear-gradient(135deg,#031521,#062d42);color:#fff}
+.card{width:min(430px,100%);background:#08283a;border:1px solid #164b63;border-radius:20px;padding:30px;box-shadow:0 20px 60px #0008}
+.logo{width:58px;height:58px;border-radius:14px;margin:auto auto 15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#11c9f5,#2878ff);font-weight:900;font-size:20px}
+h1{text-align:center;margin:0 0 7px;font-size:25px}.sub{text-align:center;color:#a9bdc9;margin:0 0 25px;font-size:14px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#061e2d;border-radius:12px;padding:4px;margin-bottom:22px}.tab{border:0;background:transparent;color:#a9bdc9;padding:11px;border-radius:9px;font-weight:800;cursor:pointer}.tab.active{background:#11c9f5;color:#03202e}
+.form{display:none}.form.active{display:block}label{display:block;margin:13px 0 7px;font-size:13px;font-weight:700}
+input{width:100%;padding:13px;border-radius:10px;border:1px solid #285267;background:#061e2d;color:#fff;outline:none}input:focus{border-color:#11c9f5}
+.pass{position:relative}.pass input{padding-right:65px}.show{position:absolute;right:7px;top:7px;padding:7px;border:0;background:none;color:#11c9f5;font-weight:700;cursor:pointer}
+.submit{width:100%;margin-top:22px;padding:14px;border:0;border-radius:11px;background:#11c9f5;color:#03202e;font-weight:900;cursor:pointer}
+.message{display:none;margin-top:15px;padding:11px;border-radius:10px;background:#16e0a01a;color:#72f0c2;font-size:13px}
+.back{display:block;text-align:center;margin-top:20px;color:#11c9f5;text-decoration:none;font-size:13px}.note{font-size:11px;color:#8199a7;text-align:center;margin-top:18px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="logo">EC</div>
+<h1>Emmason Cyber Security</h1>
+<p class="sub">Smart Protection for a Connected World</p>
+<div class="tabs">
+<button class="tab active" onclick="formSwitch('register',this)">Register</button>
+<button class="tab" onclick="formSwitch('login',this)">Sign In</button>
+</div>
+
+<form id="register" class="form active" onsubmit="registerDemo(event)">
+<label>Full Name</label><input id="name" type="text" placeholder="Enter your full name" required>
+<label>Email Address</label><input id="email" type="email" placeholder="you@example.com" required>
+<label>Password</label><div class="pass"><input id="p1" type="password" minlength="8" placeholder="Minimum 8 characters" required><button type="button" class="show" onclick="toggle('p1',this)">Show</button></div>
+<label>Confirm Password</label><div class="pass"><input id="p2" type="password" minlength="8" placeholder="Repeat your password" required><button type="button" class="show" onclick="toggle('p2',this)">Show</button></div>
+<button class="submit">Create Account</button>
+</form>
+
+<form id="login" class="form" onsubmit="loginDemo(event)">
+<label>Email Address</label><input type="email" placeholder="you@example.com" required>
+<label>Password</label><div class="pass"><input id="lp" type="password" placeholder="Enter your password" required><button type="button" class="show" onclick="toggle('lp',this)">Show</button></div>
+<button class="submit">Sign In</button>
+</form>
+
+<div id="msg" class="message"></div>
+<a class="back" href="index.html">← Back to Emmason Cyber Security</a>
+<p class="note">This is the front-end registration/sign-in interface. Real accounts require a secure backend/database and password hashing.</p>
+</div>
+<script>
+function formSwitch(id,b){document.querySelectorAll('.form').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('msg').style.display='none'}
+function toggle(id,b){let x=document.getElementById(id);x.type=x.type==='password'?'text':'password';b.textContent=x.type==='password'?'Show':'Hide'}
+function message(t){let x=document.getElementById('msg');x.textContent=t;x.style.display='block'}
+function registerDemo(e){e.preventDefault();if(p1.value!==p2.value){message('Passwords do not match.');return}message('Registration submitted. Connect a secure backend to create the account.')}
+function loginDemo(e){e.preventDefault();message('Sign-in submitted. Connect a secure backend to authenticate the account.')}
+</script>
+</body>
+</html>
