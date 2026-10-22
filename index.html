@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#071A33">
 
-    <meta name="description" content="EMMASON CYBER SECURITY promotes cybersecurity awareness, website security assessments, network security guidance, and responsible digital protection.">
+    <meta name="description"
+          content="EMMASON CYBER SECURITY provides cybersecurity awareness, security consulting, network security education, and digital protection guidance. Smart Protection for a Connected World.">
+
+    <meta name="keywords"
+          content="EMMASON Cyber Security, cybersecurity, network security, digital protection, security awareness, ethical hacking">
+
+    <meta name="author" content="EMMASON CYBER SECURITY">
 
     <title>EMMASON CYBER SECURITY | Smart Protection for a Connected World</title>
 
+    <link rel="icon" type="image/png" href="2026LOGO.png">
+
     <style>
+        /* =========================
+           1. GLOBAL STYLES
+        ========================== */
+
         :root {
             --navy: #071A33;
-            --navy-light: #102847;
-            --gold: #D4AF37;
-            --gold-light: #F1D77A;
+            --navy-light: #102747;
+            --blue: #1677FF;
+            --cyan: #00D4FF;
             --white: #FFFFFF;
-            --light: #F5F6F8;
-            --text: #263445;
-            --muted: #647184;
-            --border: #E0E4E9;
+            --light: #F3F7FC;
+            --gray: #64748B;
+            --dark: #122033;
+            --border: #DCE5F0;
+            --success: #13B981;
+            --shadow: 0 12px 35px rgba(7, 26, 51, 0.10);
         }
 
         * {
@@ -30,18 +44,27 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 130px;
+            scroll-padding-top: 90px;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--white);
-            color: var(--text);
             line-height: 1.7;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        img {
+            max-width: 100%;
         }
 
         a {
-            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
@@ -50,415 +73,741 @@
         }
 
         .section {
-            padding: 75px 0;
+            padding: 85px 0;
         }
 
-        .light-section {
-            background: var(--light);
-        }
-
-        .section-heading {
-            max-width: 760px;
+        .section-title {
+            max-width: 720px;
+            margin: 0 auto 45px;
             text-align: center;
-            margin: 0 auto 42px;
         }
 
-        .section-heading h2 {
+        .section-title .eyebrow {
+            color: var(--blue);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
             color: var(--navy);
             font-size: clamp(1.8rem, 4vw, 2.6rem);
             line-height: 1.25;
-            margin-bottom: 15px;
+            margin: 12px 0;
         }
 
-        .section-heading p {
-            color: var(--muted);
+        .section-title p {
+            color: var(--gray);
+            font-size: 1rem;
         }
 
-        /* HEADER AND ECS LOGO */
+        /* =========================
+           2. HEADER AND LOGO
+        ========================== */
 
         .site-header {
-            background: var(--navy);
-            border-bottom: 3px solid var(--gold);
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: var(--navy);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
         }
 
         .header-inner {
-            min-height: 90px;
+            min-height: 88px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
-            padding: 14px 0;
+            gap: 20px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 13px;
-            text-decoration: none;
+            gap: 12px;
             min-width: 0;
         }
 
-        /* TEXT-BASED EMMASON CYBER SECURITY LOGO */
-
+        /* Actual company logo image */
         .logo {
-    width: 62px;
-    height: 62px;
-    flex-shrink: 0;
-    display: block;
-    object-fit: contain;
-}
-
-        .logo::after {
-    content: "";
-    position: absolute;
-    bottom: 7px;
-    left: 12px;
-    right: 12px;
-    height: 2px;
-    background: var(--white);
-}
-        .brand-name {
             display: block;
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border-radius: 8px;
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-text h1 {
             color: var(--white);
-            font-size: 16px;
+            font-size: clamp(0.9rem, 2.4vw, 1.25rem);
+            line-height: 1.3;
             font-weight: 800;
-            line-height: 1.35;
             letter-spacing: 0.3px;
         }
 
-        .brand-slogan {
-            display: block;
-            color: var(--gold-light);
-            font-size: 11px;
-            margin-top: 5px;
-            line-height: 1.4;
+        .brand-text p {
+            color: var(--cyan);
+            font-size: 0.72rem;
+            line-height: 1.5;
         }
 
-        .navigation {
+        .nav-menu {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 8px 17px;
+            gap: 22px;
+            list-style: none;
         }
 
-        .navigation a {
+        .nav-menu a {
             color: var(--white);
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 600;
-            text-decoration: none;
-            padding: 5px 0;
+            transition: color 0.2s ease;
         }
 
-        .navigation a:hover,
-        .navigation a:focus {
-            color: var(--gold);
+        .nav-menu a:hover,
+        .nav-menu a:focus-visible {
+            color: var(--cyan);
         }
 
-        /* BUTTONS */
-
-        .button {
-            display: inline-block;
-            padding: 13px 23px;
-            border: 2px solid var(--gold);
-            border-radius: 5px;
-            background: var(--gold);
-            color: var(--navy);
-            font-size: 15px;
-            font-weight: 800;
-            text-decoration: none;
-            text-align: center;
-            transition: 0.2s ease;
+        .nav-menu .nav-contact {
+            background: var(--blue);
+            padding: 10px 17px;
+            border-radius: 7px;
         }
 
-        .button:hover,
-        .button:focus {
+        .nav-menu .nav-contact:hover {
+            color: var(--white);
+            background: #0865E8;
+        }
+
+        .menu-toggle {
+            display: none;
             background: transparent;
-            color: var(--gold);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 1rem;
+            cursor: pointer;
         }
 
-        .button-outline {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        .button-outline:hover,
-        .button-outline:focus {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        /* HOMEPAGE HERO */
+        /* =========================
+           3. HERO SECTION
+        ========================== */
 
         .hero {
-            background: var(--navy);
+            position: relative;
+            overflow: hidden;
             color: var(--white);
-            padding: 100px 0 95px;
-            border-bottom: 1px solid #203957;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(22, 119, 255, 0.28),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #071A33, #102B50);
+            padding: 105px 0 100px;
         }
 
-        .hero-content {
-            max-width: 850px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border: 1px solid rgba(0, 212, 255, 0.16);
+            border-radius: 50%;
+            right: -110px;
+            bottom: -150px;
+            pointer-events: none;
         }
 
-        .eyebrow {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 2px;
+        .hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .hero-badge {
             display: inline-block;
-            margin-bottom: 20px;
+            color: var(--cyan);
+            background: rgba(0, 212, 255, 0.09);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            padding: 7px 14px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 23px;
         }
 
-        .hero h1 {
-            font-size: clamp(2.3rem, 6vw, 4.4rem);
-            line-height: 1.12;
-            margin-bottom: 25px;
+        .hero h2 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.13;
+            margin-bottom: 22px;
+            letter-spacing: -1.5px;
         }
 
-        .hero h1 span {
-            color: var(--gold);
+        .hero h2 span {
+            color: var(--cyan);
         }
 
-        .hero p {
-            max-width: 730px;
-            color: #E0E7F0;
-            font-size: 17px;
-            margin-bottom: 18px;
+        .hero-description {
+            color: #D0DCEC;
+            font-size: 1.05rem;
+            max-width: 610px;
+            margin-bottom: 30px;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 30px;
         }
 
-        .hero-note {
-            color: var(--gold-light) !important;
-            font-size: 14px !important;
-            margin-top: 25px;
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 13px 21px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            transition: transform 0.2s, background 0.2s;
         }
 
-        /* ABOUT US */
+        .btn:hover {
+            transform: translateY(-2px);
+        }
 
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
+        .btn-primary {
+            color: var(--white);
+            background: var(--blue);
+        }
+
+        .btn-primary:hover {
+            background: #0865E8;
+        }
+
+        .btn-outline {
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.55);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 310px;
+        }
+
+        .hero-logo-frame {
+            width: min(310px, 100%);
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 28px;
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 70px rgba(22,119,255,0.12);
+        }
+
+        .hero-logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* =========================
+           4. TRUST STRIP
+        ========================== */
+
+        .trust-strip {
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 25px 0;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.94rem;
+        }
+
+        .trust-item span {
+            display: block;
+            color: var(--gray);
+            font-size: 0.82rem;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+
+        /* =========================
+           5. ABOUT SECTION
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .about-content .eyebrow {
+            color: var(--blue);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .about-content h2 {
+            color: var(--navy);
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            line-height: 1.25;
+            margin: 12px 0 20px;
         }
 
         .about-content p {
-            margin-bottom: 18px;
+            color: var(--gray);
+            margin-bottom: 16px;
         }
 
-        .mission-box {
-            margin-top: 28px;
-            padding: 23px;
+        .about-points {
+            display: grid;
+            gap: 12px;
+            margin-top: 23px;
+        }
+
+        .about-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .check {
+            display: inline-flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #DDF8EC;
+            color: #087F55;
+            font-weight: 900;
+        }
+
+        .about-card {
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
             background: var(--light);
-            border-left: 4px solid var(--gold);
-            border-radius: 0 5px 5px 0;
         }
 
-        .mission-box strong {
+        .about-card h3 {
             color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
         }
 
-        /* SERVICES */
+        .about-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .principle {
+            padding: 15px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .principle strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .principle span {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           6. SERVICES
+        ========================== */
+
+        .services {
+            background: var(--light);
+        }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
         .service-card {
-            padding: 29px;
             background: var(--white);
             border: 1px solid var(--border);
-            border-top: 4px solid var(--gold);
-            border-radius: 7px;
+            border-radius: 13px;
+            padding: 28px 24px;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            background: #E6F1FF;
+            color: var(--blue);
+            font-size: 1.5rem;
+            margin-bottom: 19px;
         }
 
         .service-card h3 {
             color: var(--navy);
-            font-size: 21px;
+            font-size: 1.15rem;
             line-height: 1.4;
-            margin-bottom: 13px;
+            margin-bottom: 12px;
         }
 
         .service-card p {
-            color: var(--muted);
-            margin-bottom: 17px;
+            color: var(--gray);
+            font-size: 0.93rem;
         }
 
-        .text-link {
-            color: #80620A;
-            font-weight: 800;
-            text-decoration: none;
-        }
+        /* =========================
+           7. WHY CHOOSE US
+        ========================== */
 
-        .text-link:hover,
-        .text-link:focus {
-            text-decoration: underline;
-        }
-
-        .service-note {
-            color: var(--muted);
-            font-size: 14px;
-            text-align: center;
-            margin-top: 28px;
-        }
-
-        /* WHY CHOOSE US */
-
-        .reasons-grid {
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
         }
 
-        .reason-card {
+        .why-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
             padding: 24px;
-            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            border-left: 4px solid var(--gold);
+            border-radius: 12px;
         }
 
-        .reason-card h3 {
+        .why-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            color: var(--blue);
+            background: #E6F1FF;
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        .why-card h3 {
             color: var(--navy);
-            font-size: 19px;
-            margin-bottom: 9px;
+            font-size: 1.05rem;
+            margin-bottom: 7px;
         }
 
-        .reason-card p {
-            color: var(--muted);
+        .why-card p {
+            color: var(--gray);
+            font-size: 0.92rem;
         }
 
-        /* OUR PROCESS */
+        /* =========================
+           8. SECURITY AWARENESS
+        ========================== */
 
-        .process-list {
-            max-width: 850px;
-            margin: 0 auto;
+        .awareness {
+            background: var(--navy);
+            color: var(--white);
         }
 
-        .process-step {
-            padding: 23px;
+        .awareness-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .awareness h2 {
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            line-height: 1.25;
             margin-bottom: 18px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            background: var(--white);
         }
 
-        .process-step h3 {
-            color: var(--navy);
-            margin-bottom: 8px;
+        .awareness h2 span {
+            color: var(--cyan);
         }
 
-        .process-step p {
-            color: var(--muted);
+        .awareness p {
+            color: #CBD8E8;
+            margin-bottom: 20px;
         }
 
-        /* ETHICAL SECURITY */
+        .awareness-list {
+            display: grid;
+            gap: 13px;
+        }
 
-        .ethics-box {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 28px;
+        .awareness-list div {
+            padding: 13px 16px;
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.04);
+            color: #E7F0FC;
+        }
+
+        /* =========================
+           9. CONTACT SECTION
+        ========================== */
+
+        .contact {
             background: var(--light);
-            border: 1px solid var(--border);
-            border-top: 4px solid var(--gold);
-            border-radius: 6px;
         }
 
-        .ethics-box h3 {
-            color: var(--navy);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 35px;
+        }
+
+        .contact-info {
+            padding: 30px;
+            color: var(--white);
+            background: var(--navy);
+            border-radius: 15px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 13px;
         }
 
-        .ethics-box p + p {
-            margin-top: 14px;
+        .contact-info > p {
+            color: #CBD8E8;
+            margin-bottom: 25px;
         }
 
-        /* CONTACT */
+        .contact-detail {
+            padding: 15px 0;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
 
-        .contact-section {
-            padding: 75px 0;
-            background: var(--navy);
+        .contact-detail strong {
+            display: block;
+            color: var(--cyan);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-detail a,
+        .contact-detail span {
             color: var(--white);
-            text-align: center;
-            border-top: 3px solid var(--gold);
-        }
-
-        .contact-section h2 {
-            font-size: clamp(1.9rem, 4vw, 2.7rem);
-            margin-bottom: 16px;
-        }
-
-        .contact-section p {
-            max-width: 720px;
-            color: #E0E7F0;
-            margin: 0 auto 25px;
-        }
-
-        .contact-email {
-            margin-top: 23px;
             overflow-wrap: anywhere;
         }
 
-        .contact-email a {
-            color: var(--gold-light);
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
         }
 
-        /* FOOTER */
+        .contact-form h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            color: var(--gray);
+            font-size: 0.92rem;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            display: block;
+            width: 100%;
+            padding: 12px 13px;
+            color: var(--dark);
+            font: inherit;
+            font-size: 0.93rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 7px;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: 2px solid rgba(22,119,255,0.25);
+            border-color: var(--blue);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .form-note {
+            margin-top: 12px;
+            color: var(--gray);
+            font-size: 0.78rem;
+        }
+
+        /* =========================
+           10. SOCIAL LINKS
+        ========================== */
+
+        .social-section {
+            padding: 55px 0;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            color: var(--navy);
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .social-section p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 18px;
+            color: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        /* =========================
+           11. FOOTER
+        ========================== */
 
         .site-footer {
-            background: #041020;
-            color: #DCE4EF;
-            padding-top: 55px;
+            color: #CBD8E8;
+            background: #041123;
+            padding: 45px 0 20px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-            gap: 32px;
-            padding-bottom: 38px;
+            grid-template-columns: 1.3fr 0.7fr 1fr;
+            gap: 35px;
+            padding-bottom: 30px;
         }
 
         .footer-brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 17px;
+            margin-bottom: 15px;
         }
 
-        .footer-brand .logo {
-            width: 51px;
-            height: 51px;
-            font-size: 17px;
+        .footer-logo {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            flex-shrink: 0;
         }
 
-        .footer-brand .brand-name {
-            font-size: 14px;
+        .footer-brand h2 {
+            color: var(--white);
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
-        .footer-brand .brand-slogan {
-            font-size: 10px;
+        .footer-brand p {
+            color: var(--cyan);
+            font-size: 0.75rem;
         }
 
         .footer-description {
-            font-size: 14px;
-            color: #C1CCDA;
+            color: #AEBED1;
+            font-size: 0.9rem;
         }
 
         .footer-column h3 {
-            color: var(--gold);
-            font-size: 17px;
-            margin-bottom: 17px;
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 15px;
         }
 
         .footer-column ul {
@@ -466,631 +815,20 @@
         }
 
         .footer-column li {
-            margin-bottom: 11px;
-            overflow-wrap: anywhere;
+            margin-bottom: 9px;
         }
 
         .footer-column a {
-            color: #DCE4EF;
-            font-size: 14px;
-            text-decoration: none;
+            color: #CBD8E8;
+            font-size: 0.9rem;
         }
 
-        .footer-column a:hover,
-        .footer-column a:focus {
-            color: var(--gold-light);
-            text-decoration: underline;
+        .footer-column a:hover {
+            color: var(--cyan);
         }
 
         .footer-bottom {
-            padding: 22px 0;
-            text-align: center;
-            border-top: 1px solid #26364A;
-            color: #C1CCDA;
-            font-size: 13px;
-        }
-
-        .footer-bottom p + p {
-            margin-top: 6px;
-        }
-
-        .footer-bottom strong {
-            color: var(--gold-light);
-        }
-
-        /* RESPONSIVE DESIGN */
-
-        @media (max-width: 950px) {
-            .header-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .navigation {
-                justify-content: flex-start;
-                width: 100%;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            .section {
-                padding: 55px 0;
-            }
-
-            .hero {
-                padding: 68px 0;
-            }
-
-            .logo {
-                width: 52px;
-                height: 52px;
-                font-size: 18px;
-            }
-
-            .brand-name {
-                font-size: 13px;
-            }
-
-            .brand-slogan {
-                font-size: 10px;
-            }
-
-            .navigation {
-                gap: 7px 14px;
-            }
-
-            .navigation a {
-                font-size: 13px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .services-grid,
-            .reasons-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                padding: 23px;
-            }
-
-            .footer-grid {
-                gap: 29px;
-            }
-
-            .contact-section {
-                padding: 58px 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- HEADER: ECS LOGO BESIDE THE WEBSITE TITLE -->
-<header class="site-header">
-    <div class="brand">
-        <img
-            src="./2026LOGO.png"
-            alt="EMMASON Cyber Security Logo"
-            class="logo"
-        >    <div class="brand-text">
-        <h1>EMMASON CYBER SECURITY</h1>
-        <p>Smart Protection for a Connected World</p>
-    </div>
-</div>
-
-</header>
-
-            <nav class="navigation" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="About Us">About Us</a>
-                <a href="Services.html">Services</a>
-                <a href="Why-Us.html">Why Us</a>
-                <a href="#process">Our Process</a>
-                <a href="Contact">Contact</a>
-            </nav>
-
-        </div>
-    </header>
-
-    <main>
-
-        <!-- HOMEPAGE WELCOME SECTION -->
-
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-
-                    <span class="eyebrow">
-                        Cybersecurity and Digital Protection
-                    </span>
-
-                    <h1>
-                        Smart Security for a
-                        <span>Connected World.</span>
-                    </h1>
-
-                    <p>
-                        Welcome to EMMASON CYBER SECURITY (ECS), where we
-                        promote digital safety, responsible security
-                        practices, and greater awareness of cybersecurity
-                        threats.
-                    </p>
-
-                    <p>
-                        Our focus is to help individuals and organizations
-                        understand digital risks and explore practical
-                        ways to strengthen their security.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a class="button" href="Contact.html">
-                            Request a Security Assessment
-                        </a>
-
-                        <a class="button button-outline" href="explore-services">
-                            Explore Our Services
-                        </a>
-                    </div>
-
-                    <p class="hero-note">
-                        Smart Protection for a Connected World.
-                    </p>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT US -->
-
-        <section class="section" id="about">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>About Us</h2>
-                    <p>
-                        Responsible cybersecurity starts with awareness,
-                        knowledge, and good security practices.
-                    </p>
-                </div>
-
-                <div class="about-content">
-
-                    <p>
-                        EMMASON CYBER SECURITY is a cybersecurity-focused
-                        initiative dedicated to promoting digital safety,
-                        security awareness, and responsible technology use.
-                    </p>
-
-                    <p>
-                        We believe cybersecurity is important for everyone.
-                        Individuals, small businesses, and organizations
-                        all benefit from understanding online threats
-                        and taking appropriate steps to protect their
-                        digital information.
-                    </p>
-
-                    <p>
-                        Through our core service areas, we aim to encourage
-                        better security decisions, improve awareness of
-                        common digital risks, and promote ethical approaches
-                        to protecting digital environments.
-                    </p>
-
-                    <div class="mission-box">
-                        <strong>Our Mission:</strong>
-                        To promote smarter security decisions, responsible
-                        cybersecurity practices, and safer digital
-                        experiences for a connected world.
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FIVE CORE SERVICES -->
-
-        <section class="section light-section" id="services">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>Our Cybersecurity Services</h2>
-                    <p>
-                        Explore our five core service areas. We focus on
-                        practical guidance, awareness, and authorized
-                        security work.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-                        <h3>Cybersecurity Consultation</h3>
-                        <p>
-                            Get guidance on cybersecurity concerns, common
-                            digital threats, account protection, security
-                            best practices, and practical approaches to
-                            improving your security posture.
-                        </p>
-                        <a class="text-link" href="#contact">
-                            Ask About This Service
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <h3>Website Security Assessment</h3>
-                        <p>
-                            Understand potential website security weaknesses
-                            and identify areas that may require improvement.
-                            Technical assessments are conducted only with
-                            appropriate authorization and an agreed scope.
-                        </p>
-                        <a class="text-link" href="www.emmanuel.cybersecurity@gmail.com">
-                            Request an Assessment
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <h3>Network Security Guidance</h3>
-                        <p>
-                            Learn about network security principles,
-                            secure configurations, access controls,
-                            Wi-Fi protection, and practical measures
-                            that can help reduce avoidable network risks.
-                        </p>
-                        <a class="text-link" href="emmanuel.cybersecurity@gmail.com">
-                            Ask About Network Security
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <h3>Security Awareness Training</h3>
-                        <p>
-                            Build awareness of phishing, social engineering,
-                            password safety, suspicious links, safe browsing,
-                            and everyday habits that help people protect
-                            their accounts and information.
-                        </p>
-                        <a class="text-link" href="emmanuel.cybersecurity@gmail.com">
-                            Discuss Awareness Training
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <h3>IT Security Support</h3>
-                        <p>
-                            Get general guidance on device security,
-                            software updates, backup practices, account
-                            settings, and basic security hygiene for
-                            personal or small-business technology.
-                        </p>
-                        <a class="text-link" href="emmanuel.cybersecurity@gmail.com">
-                            Ask About IT Security Support
-                        </a>
-                    </article>
-
-                </div>
-
-                <p class="service-note">
-                    The exact service, scope, timeline, and any fee should
-                    be agreed before work begins. Never share passwords
-                    or sensitive credentials in an enquiry.
-                </p>
-
-            </div>
-        </section>
-
-        <!-- WHY CHOOSE US -->
-
-        <section class="section" id="why-us">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>Why Choose EMMASON CYBER SECURITY?</h2>
-                    <p>
-                        Our approach is built around clarity,
-                        responsibility, and practical digital safety.
-                    </p>
-                </div>
-
-                <div class="reasons-grid">
-
-                    <article class="reason-card">
-                        <h3>Ethical and Authorized</h3>
-                        <p>
-                            Security testing must have clear permission,
-                            defined boundaries, and a legitimate purpose.
-                        </p>
-                    </article>
-
-                    <article class="reason-card">
-                        <h3>Practical Guidance</h3>
-                        <p>
-                            We aim to explain security concepts in
-                            understandable language and focus on
-                            useful, applicable steps.
-                        </p>
-                    </article>
-
-                    <article class="reason-card">
-                        <h3>Security Awareness</h3>
-                        <p>
-                            We encourage safer online habits and help
-                            people recognize common threats before
-                            they cause harm.
-                        </p>
-                    </article>
-
-                    <article class="reason-card">
-                        <h3>Respect for Privacy</h3>
-                        <p>
-                            Personal and business information should
-                            be handled carefully, and unnecessary
-                            sensitive data should not be collected.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- HOW WE WORK -->
-
-        <section class="section light-section" id="process">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>How We Work</h2>
-                    <p>
-                        A clear process helps ensure that security work
-                        stays appropriate and focused.
-                    </p>
-                </div>
-
-                <div class="process-list">
-
-                    <article class="process-step">
-                        <h3>1. Understand Your Needs</h3>
-                        <p>
-                            We begin by discussing your concern, the
-                            systems involved, and the outcome you want
-                            to achieve.
-                        </p>
-                    </article>
-
-                    <article class="process-step">
-                        <h3>2. Agree on Scope and Permission</h3>
-                        <p>
-                            Before any technical assessment, the owner
-                            or authorized representative must approve
-                            the work and define which systems may
-                            be assessed.
-                        </p>
-                    </article>
-
-                    <article class="process-step">
-                        <h3>3. Review and Explain</h3>
-                        <p>
-                            Where a service is suitable and within our
-                            capabilities, we review the agreed issue
-                            and explain our observations in clear language.
-                        </p>
-                    </article>
-
-                    <article class="process-step">
-                        <h3>4. Recommend Next Steps</h3>
-                        <p>
-                            We share practical recommendations or learning
-                            resources to help address identified concerns.
-                            Deliverables and timing are agreed in advance.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ETHICAL SECURITY -->
-
-        <section class="section" id="ethics">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>Our Commitment to Ethical Security</h2>
-                    <p>
-                        Protecting digital environments begins with
-                        respecting people, systems, and the law.
-                    </p>
-                </div>
-
-                <div class="ethics-box">
-                    <h3>Permission First. Safety Always.</h3>
-
-                    <p>
-                        EMMASON CYBER SECURITY supports responsible
-                        cybersecurity education and authorized security
-                        work. We do not encourage unauthorized access,
-                        intrusive testing, data theft, disruption, or
-                        attempts to bypass another person's security
-                        controls.
-                    </p>
-
-                    <p>
-                        Any assessment must be approved by the system
-                        owner or an authorized representative, with
-                        a clear scope and agreed limits. Without
-                        authorization, we can discuss general guidance
-                        and defensive best practices instead.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-
-        <section class="contact-section" id="contact">
-            <div class="container">
-
-                <h2>Let's Talk About Your Security</h2>
-
-                <p>
-                    Have a question about cybersecurity awareness,
-                    website security, network protection, or basic
-                    IT security? Contact us to describe what you need.
-                    Please do not include passwords, verification codes,
-                    or confidential system information in your first
-                    message.
-                </p>
-
-                <a class="button"
-                   href="mailto:emmanuel.cybersecurity@gmail.com?subject=EMMASON%20CYBER%20SECURITY%20Enquiry">
-                    Email EMMASON CYBER SECURITY
-                </a>
-
-                <p class="contact-email">
-                    Email:
-                    <a href="mailto:emmanuel.cybersecurity@gmail.com">
-                        emmanuel.cybersecurity@gmail.com
-                    </a>
-                </p>
-
-                <p>
-                    For security assessments, please include a brief
-                    description of the system you own or are authorized
-                    to represent. Scope and availability must be confirmed
-                    before testing begins.
-                </p>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer class="site-footer">
-        <div class="container">
-
-            <div class="footer-grid">
-
-                <div class="footer-column">
-
-                    <div class="footer-brand">
-
-                        <span class="2026 LOGO.png" aria-hidden="true">ECS</span>
-
-                        <span>
-                            <span class="brand-name">
-                                EMMASON CYBER SECURITY
-                            </span>
-                            <span class="brand-slogan">
-                                Smart Protection for a Connected World
-                            </span>
-                        </span>
-
-                    </div>
-
-                    <p class="footer-description">
-                        Promoting digital safety, cybersecurity awareness,
-                        and responsible technology practices.
-                    </p>
-
-                </div>
-
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href=About Us">About Us</a></li>
-                        <li><a href="Services">Services</a></li>
-                        <li><a href="Why-us.html">Why Choose Us</a></li>
-                        <li><a href="Contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Core Services</h3>
-
-                    <ul>
-                        <li><a href="#services">Cybersecurity Consultation</a></li>
-                        <li><a href="#services">Website Security Assessment</a></li>
-                        <li><a href="#services">Network Security Guidance</a></li>
-                        <li><a href="#services">Security Awareness Training</a></li>
-                        <li><a href="#services">IT Security Support</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-
-                    <ul>
-                        <li>
-                            <a href="https://www.linkedin.com/in/emmanuelisu"
-                               target="_blank" rel="noopener noreferrer">
-                                LinkedIn
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://x.com/Emmanuelisu"
-                               target="_blank" rel="noopener noreferrer">
-                                X (Twitter)
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.instagram.com/EmmanuelIsu259/"
-                               target="_blank" rel="noopener noreferrer">
-                                Instagram
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://wa.me/2347018392661"
-                               target="_blank" rel="noopener noreferrer">
-                                WhatsApp Business
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="mailto:emmanuel.cybersecurity@gmail.com">
-                                Email Us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p>
-                    &copy; <span id="current-year">2026</span>
-                    <strong>EMMASON CYBER SECURITY</strong>.
-                    All rights reserved.
-                </p>
-
-                <p>Smart Protection for a Connected World.</p>
-            </div>
-
-        </div>
-    </footer>
-
-    <script>
-        // Automatically update the copyright year.
-        document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-    </script>
-
-</body>
-</html>
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px
